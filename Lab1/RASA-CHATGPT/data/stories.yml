@@ -1,0 +1,21 @@
+version: "3.1"
+
+stories: 
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+ 
+- story: virtual_pet
+  steps:
+  - intent: virtual_pet
+  - action: utter_askpet
+  - intent: pet_begin
+  - action: action_pet
+
+- story: virtual_copywriter
+  steps:
+  - intent: virtual_copywriter
+  - action: utter_askcopy
+  - intent: copywriter_begin
+  - action: action_copywriter

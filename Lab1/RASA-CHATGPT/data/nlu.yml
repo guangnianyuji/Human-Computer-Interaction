@@ -1,0 +1,27 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+
+- intent: pet_begin
+  examples: |
+   - My pet was energetic and curious.
+   - I want you to emulate my pet's curiosity.
+   - My pet was friendly and playful.
+   - I want you to simulate my pet's playful behavior.
+   - Can you behave like my pet, who loved to play?
+
+- intent: copywriter_begin
+  examples: |
+   - I want to post a funny picture in Wechat Moments.
+   - I'm feeling unhappy today and encountered some bad luck.
+   - This photo features a famous scenic spot.
+   - I am very happy because I encountered something novel today.
+   - Very excited, I went out to play today. 
+   - Today I took a very pretty selfie to post to Wechat Moments.
