@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--BackCompat：怪异模式，浏览器使用自己的怪异模式解析渲染页面。-->
+<!--CSS1Compat：标准模式，浏览器使用W3C的标准解析渲染页面。-->
+<!--此行表示使用标准模式去解析文档-->
+<html lang="en">
+    <head>
+        <title>Image Search Engine</title>
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-Control"
+          content="no-cache, must-revalidate, post-check=0, pre-check=0">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma"  content='no-cache'>
+        <link rel="shortcut icon"
+              href="images/ico.jpg">
+        <link href="css/bootstrap.min.css"
+              rel="stylesheet">
+        <link href="css/jumbotron-narrow.css"
+              rel="stylesheet">
+            <!--搜索结果图片css-->
+        <link rel="stylesheet" type="text/css"
+              href="css/imgtable.css">
+            <!--tag标签css-->
+        <link rel="stylesheet" type="text/css"
+              href="css/imgtag.css">
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/myjs.js"></script>
+
+        <style>
+            body{
+                  background-image: url(images/background.jpg);
+                  background-repeat: no-repeat;
+                  background-attachment: fixed;
+                  background-size:100% 100%;
+                  padding: 200px 15px;
+                  text-align: center;
+                }
+        </style>
+        <!--规定了当前文档与外部资源的关系-->
+    </head>
+    <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+       <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle collapsed"
+                  data-toggle="collapse"
+                  data-target="#navbar"
+                  aria-expanded="false"
+                  aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <!--切换导航  -->
+          </button>
+            <div class="navbar-brand" style="color:white">
+              <strong>
+                    Image Search Engine
+              </strong>
+            </div>
+          <form class="navbar-form navbar-right">
+
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#favphotorow">
+             Favorite
+            </button>
+
+          </form>
+        </div>
+      </div>
+     </nav>
+
+      <div id="favphotorow" class="row">
+
+
+      </div>
+
+      <h1>Image Search Engine</h1>
+      
+      <div class="jumbotron" align="center">
+       <form method="post" enctype="multipart/form-data" >
+        <div class="form-horizon" >
+            <div class="col-md-2 form-group">
+
+            </div>
+            <input type="file" id="file" name="file"
+                   class="col-md-3 form-group btn-xs btn-info" required="required" onchange="imageshow(this)">
+
+
+        <!--占空-->
+        <div class="col-md-2 form-group">
+            <button id="clear" type="button" class ="btn-xs btn-info" style="display:none;" onclick="reclear()">clear</button>
+        </div>
+
+         <label for="submit" class="col-md-3 form-group btn-xs btn-info">Search!</label>
+        <input type=submit id="submit" style="display:none;" onclick="imagesearch()">
+
+       </div>
+     </form>
+    </div>
+
+    <!--加载图标 -->
+    <img class="center-block"
+         id="load"
+         src="images/ajax-loader.gif"
+         style="height:100px;weight:100px;display:none;" >
+
+
+    <!--结果显示-->
+      <div id="main" class="container">
+          <!--原图-->
+          <div style="display: inline-block;">
+              <img id="source_img" src="" draggable="false" />
+          </div>
+
+          <!--结果-->
+          <div style="min">
+              <!-- 占空-->
+          </div>
+
+                      <!--收藏按钮-->
+                <div id="favbtn" style="display:none;">
+                    <button id="fbtn" type="button" class="btn  btn-warning" name="none" onclick="fav(name)">choose your like</button>
+                </div>
+                <!--结果列表-->
+              <table id="table" class="table" style="display:none;">
+                  <caption style="color:blue"><strong>共检索9张图片 </strong></caption>
+                  <tbody>
+                  <tr>
+                      <td class="table-td">
+                          <div class="max">
+                          <img class="max" id="img0" src="" alt="Norway" onclick="choosefav(id)" />
+
+                          </div>
+                      </td>
+                      <td class="table-td">
+                          <div class="max">
+                          <img class="max" id="img1" src="" alt="Norway" onclick="choosefav(id)"/>
+                          </div>
+                      </td>
+                      <td class="table-td">
+                          <div class="max">
+                          <img class="max" id="img2" src="" alt="Norway" onclick="choosefav(id)"/>
+                          </div>
+                      </td>
+                  <tr>
+                      <td class="max table-td">
+                          <div class="max">
+                          <img class="max" id="img3" src="" alt="Norway" onclick="choosefav(id)"/>
+                            </div>
+                      </td>
+
+                      <td class="max table-td">
+                          <div class="max">
+                          <img class="max" id="img4" src="" alt="Norway" onclick="choosefav(id)"/>
+                          </div>
+                      </td>
+                      <td class="max table-td">
+                          <div class="max">
+                          <img class="max" id="img5" src="" alt="Norway" onclick="choosefav(id)"/>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="max table-td">
+                          <div class="max">
+                          <img class="max" id="img6" src="" alt="Norway" onclick="choosefav(id)"/>
+                          </div>
+                      </td>
+                      <td class="max table-td">
+                          <div class="max">
+                          <img class="max" id="img7" src="" alt="Norway" onclick="choosefav(id)"/>
+                          </div>
+                      </td>
+                      <td class="max table-td">
+                          <div>
+                          <img class="max" id="img8" src="" alt="Norway" onclick="choosefav(id)"/>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+          <!--标签-->
+          <div>
+          <table id="tagtable" class="table" style="display:none;">
+              <tbody>
+                <tr>
+                    <td>
+                       <button  type="button" id="all" class="btn btn-primary" onclick="tagclick(id)">all</button>
+                    </td>
+                </tr>
+              </tbody>
+          </table>
+          </div>
+      </div>
+    </body>
+
+
+</html>
+
