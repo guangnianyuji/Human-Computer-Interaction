@@ -19,19 +19,13 @@ PS.To use my API Keys,you must connect to the VPN first.
 
 ## Using
 
-##### 1.Open cmd or Powershell in the folder.
+##### 1.Open cmd or Powershell in the folder ‘RASA-CHATGPT’.
 
 ##### 2.Input "rasa train".
 
-![p1](https://github.com/guangnianyuji/Human-Computer-Interaction/blob/main/Lab1/pictures/image-20230412202710813.png)
-
 ##### 3.Input"rasa run actions"
 
-![p2](https://github.com/guangnianyuji/Human-Computer-Interaction/blob/main/Lab1/pictures/image-20230412203011550.png)
-
 ##### 4.Create another terminal(cmd or Powershell),Input"rasa shell --endpoints endpoints.yml"
-
-![p3](https://github.com/guangnianyuji/Human-Computer-Interaction/blob/main/Lab1/pictures/image-20230412203734549.png)
 
 ##### 5.Start Talking.
 
@@ -53,7 +47,7 @@ Next,you should describe your pets' behavior and personality.
 
 ###### 5.2 Virtual copywriter
 
-You should input  "/virtual_copywriter" to reach the first goal.
+You should input  "/virtual_copywriter" to reach the second goal.
 
 > Your input ->  /virtual_copywriter
 > Can you describe the content conveyed in the Wechat Moments?
