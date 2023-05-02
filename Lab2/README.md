@@ -15,7 +15,7 @@
 - **Development Environment:** Win 11
 - **Development Software:**
   1. PyCharm 2023.1 (Community Edition)
-  1. Google Chrome
+  1. Google Chrome  版本109.0.5414.120
 - **Development Language:**
   1. python3.9
   2. HTML
@@ -69,6 +69,7 @@
 1. **File configuration from the folder 'lab2-image-retrieval' the teacher provided:**
    - Please replace folder **'static'** with mine. 
    - Please replace folder **'templates'** with mine. 
+   - Please replace the file **image_vectorizor.py** with mine.
    - Please replace the file **rest-server.py** with mine.
    - Please copy folder **'database/dataset'** into folder **'static'**.
    - Final the folder structure will be as above.
@@ -76,11 +77,13 @@
 
 ```
   cd Lab2-image-retrieval/server
-  python image_vectorizor.py
+  python image_vectorizer.py
   python rest-server.py 
 ```
 
 3. Once the server starts up, access <http://localhost:5000/> to get the UI. 
+
+   PS:You shoule open in Google Chrome,other browser may show unsuccessfully.
 
    ![](https://github.com/guangnianyuji/Human-Computer-Interaction/blob/main/Lab2/picture/1.png?raw=true)
 
